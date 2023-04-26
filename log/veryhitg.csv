@@ -1,0 +1,61 @@
+﻿Parameter,Units,TV,Description,Reference
+ks_a100,mM-apoB100/day,0.006221404,Synthesis of apoB100,"Human Apolipoprotein (Apo) B-48 and ApoB-100 Kinetics With Stable Isotopes | Arteriosclerosis, Thrombosis, and Vascular Biology (ahajournals.org)"
+ks_a1,mM-apoA1/day,0.019547978,Synthesis of apoA1,Back-solved based on preset half-life and basal concentration
+kcl_a1,1/day,0.472331525,Clearance for apoA1,"Measurement of Reverse Cholesterol Transport Pathways in Humans: In Vivo Rates of Free Cholesterol Efflux, Esterification, and Excretion - PMC (nih.gov)"
+krct,(mM-Ch/mM-apoA1)*1/day,256.8866121,RCT Ch to apoA1,"Measurement of Reverse Cholesterol Transport Pathways in Humans: In Vivo Rates of Free Cholesterol Efflux, Esterification, and Excretion - PMC (nih.gov)"
+ksrb1,1/day,5.29300048,Clearance of cholesterol,
+klpl,1/day,5.499700053,LPL/EL/HL clearance of TG,
+kldlr_a100,1/(LDL-R*day),3.022766864,LDL-R mediated clearance of apoB100 particles,"LDL-R is normalized to ""1"" at basal"
+kldlr_a48,1/(LDL-R*day),7.527371683,LDL-R mediated clearance of apoB48 particles,A single rate constant did not work for both apoB48 & apoB100 particles
+ks_a48,mM/day,0.000179222,Synthesis of apoB48,"Human Apolipoprotein (Apo) B-48 and ApoB-100 Kinetics With Stable Isotopes | Arteriosclerosis, Thrombosis, and Vascular Biology (ahajournals.org)"
+kctp,1/(mM-apo^2*day),0.750952836,CETP activity,
+ks_fa,mM/day,475.1205187,Uptake of FA into liver,
+kdnl,mM/day,21.00534635,DNL synthesis of FA,
+kd_fa,1/day,1380.426217,Beta-oxidation of FA,
+kest_lcy,1/(mM^2*day),15144.38525,Esterification of FA,
+kest_ler,1/(mM^2*day),281481.2064,Esterification of FA,
+klip,mM/day,0.175042124,Lipolysis of TG to 3FA,
+ker,1/day,3655.359997,FA crossing into ER,
+ks_ch,mM/day,2.710230271,Synthesis of cholesterol,"Based on 1.5g/day of liver cholesterol synthesis. https://www.precisionnutrition.com/all-about-cholesterol#:~:text=Our%20liver%20produces%20anywhere%20from,we%20eat%20foods%20without%20cholesterol."
+kd_ch,1/day,4.14284378,Clearance of liver Ch,Flux balance.
+ks_ldlr,mM-Ch/day,14.28718822,Synthesis of LDL-R,Back-solved using half-life and assumed liver cholesterol content
+kd_ldlr,1/(mM-PCSK9*day),89010.92274,PCSK9-mediated clearance of LDL-R,"Low density lipoprotein receptor degradation is influenced by a mediator protein(s) with a rapid turnover rate, but is unaffected by receptor up- or down-regulation - PubMed (nih.gov)"
+ks_pk9,mM/day,0.001350251,Synthesis of PCSK9,Genetic and Metabolic Determinants of Plasma PCSK9 Levels - PMC (nih.gov)
+kcl_pk9,1/day,199.626388,Clearance of plasma PCSK9,New developments in atherosclerosis: clinical potential of PCSK9 inhib | VHRM (dovepress.com)
+vd_ler,L,0.113870546,Volume of ER,
+vd_lcy,L,0.591881035,Volume of liver hepatocyte cytosol,
+vd_p,L,6.180478889,Volume of plasma,70kg basis
+f_lpl_h,fraction,0.042032289,Fraction of total lipase activity on liver,PhysioLab
+alpha_a48,mM-TG/mM-apoB48,119864.0206,TG/apoB48 synthesis,Fixed %of dietary fat intake
+beta_a48,mM-Ch/mM-apoB48,1591.580539,Ch/apoB48 sythesis,25% of cholesterol comes from dietary sources (75% synthesized in liver)
+alpha_a100,mM-TG/mM-apoB100,166646.5792,TG/apoB100 synthesis,Back-calculated based on VLDL flux and ks_a100; https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5095238/
+beta_a100,mM-Ch/mM-apoB100,41084.41771,Ch/apoB100 sythesis,800mg/day of production (back calculated to achieve)
+f_ins,dimensionless,12.97395289,Enchanced clearance via LPL by insulin,
+K_tgler,mM-TG,26.67240933,EC50 for VLDL export TG,
+K_chl,mM-Ch,11.86525299,EC50 for VLDL export Ch,Set similar to TG (~0.5x basal)
+a100,mM,0.002058182,Reference concentration,"Human Apolipoprotein (Apo) B-48 and ApoB-100 Kinetics With Stable Isotopes | Arteriosclerosis, Thrombosis, and Vascular Biology (ahajournals.org)"
+tg_a100,mM,1.8,Reference concentration,
+ch_a100,mM,2.6,Reference concentration,
+a1,mM,0.041386139,Reference concentration,"Concentrations of apolipoproten AI, AII, and E in plasma and lipoprotein fractions of alcoholic patients: Gender differences in the effects of alcohol - Lin - 1995 - Hepatology - Wiley Online Library"
+tg_a1,mM,0.393247658,Reference concentration,
+ch_a1,mM,1.6,Reference concentration,HDL cholesterol: How to boost your 'good' cholesterol - Mayo Clinic
+a48,mM,2.38095E-05,Reference concentration,"Human Apolipoprotein (Apo) B-48 and ApoB-100 Kinetics With Stable Isotopes | Arteriosclerosis, Thrombosis, and Vascular Biology (ahajournals.org)"
+tg_a48,mM,0.3,Reference concentration,Based on 6 minute half-life in human plasma. 
+ch_a48,mM,0.022249478,Reference concentration,Based on 6 minute half-life in human plasma. 
+fa_lcy,mM,0.15,Reference concentration,
+fa_ler,mM,0.15,Reference concentration,
+tg_lcy,mM,292,Reference concentration,
+tg_ler,mM,292,Reference concentration,
+ch_l,mM,23.73050597,Reference concentration,"Pulled from Vupanorsen code, no further reference. Used V_lcy + V_ler as volume normalization."
+ldlr,dimensionless,1,Reference concentration,"Actual LDL-R is difficult to measure, will work in relative"
+pk9,mM,6.76389E-06,Reference concentration,Genetic and Metabolic Determinants of Plasma PCSK9 Levels - PMC (nih.gov)
+ctpi_gut,mmols,0,PK for CETPi,
+ctpi_cent,mM,0,PK for CETPi,
+ctpi_Q1,mM,0,PK for CETPi,
+ka_ctpi,1/hour,0,PK for CETPi,1st order absorption
+kel_ctpi,1/hour,0.1,PK for CETPi,1st order clearance
+vd_ctpi_cent,L,5,PK for CETPi,Vd
+vd_ctpi_Q1,L,5,PK for CETPi,Vd
+Q_ctpi,L/hour,0.1,PK for CETPi,Compartment flow rate
+pk9_scale,dimensionless,1,PD for PCSK9,
+cetp_scale,dimensionless,1,PD for CETPi,
