@@ -1,4 +1,5 @@
 function get_rxns()
+    @parameters ks_a100 ks_a1 kcl_a1 krct ksrb1 klpl kldlr_a100 kldlr_a48 ks_a48 kctp ks_fa kdnl kd_fa kest_lcy kest_ler klip ker ks_ch kd_ch ks_ldlr kd_ldlr ks_pk9 kcl_pk9 vd_ler vd_lcy vd_p alpha_a48 beta_a48 alpha_a100 beta_a100 K_tgler K_chl f_lpl_h f_ins cetp_scale pk9_scale ka_ctpi kel_ctpi vd_ctpi_cent vd_ctpi_Q1 Q_ctpi
     rn = @reaction_network LipoModel begin
 
         # Plasma Compartment Reactions:
@@ -61,8 +62,7 @@ function get_rxns()
         Q_ctpi/vd_ctpi_cent, ctpi_cent --> vd_ctpi_cent/vd_ctpi_Q1 * ctpi_Q1 # [nM/hour], Central --> Comp1
         Q_ctpi/vd_ctpi_Q1, ctpi_Q1 --> vd_ctpi_Q1/vd_ctpi_cent * ctpi_cent # [nM/hour], Comp1 --> Central
 
-    end ks_a100 ks_a1 kcl_a1 krct ksrb1 klpl kldlr_a100 kldlr_a48 ks_a48 kctp ks_fa kdnl kd_fa kest_lcy kest_ler klip ker ks_ch kd_ch ks_ldlr kd_ldlr ks_pk9 kcl_pk9 vd_ler vd_lcy vd_p alpha_a48 beta_a48 alpha_a100 beta_a100 K_tgler K_chl f_lpl_h f_ins cetp_scale pk9_scale ka_ctpi kel_ctpi vd_ctpi_cent vd_ctpi_Q1 Q_ctpi
-
+    end 
     return rn
 
 end
