@@ -3,11 +3,11 @@ using Catalyst
 include("../src/rxns.jl")
 rn = get_rxns()
 
-# Step 2: Convert the model to a ODESystem and simplify it.
+# Step 2: Convert the model to an ODESystem and simplify it.
 rn_odesys = structural_simplify(convert(ODESystem,rn;combinatoric_ratelaws=false))
 psym = parameters(rn_odesys)
 
-# Step 3: Initialise the inital conditions and parameters of the model from a CSV file.
+# Step 3: Initialize the inital conditions and parameters of the model from a CSV file.
 using CSV, DataFrames
 veryhitgcsv = "./log/veryhitg.csv"
 csvfile = veryhitgcsv
@@ -144,14 +144,13 @@ u0 = [
 ]
 
 
-# Sep 4: Solve ODE.
+# Step 4: Solve ODE.
 using DiffEqCallbacks, OrdinaryDiffEq
-# Solve to baseline:
 tspan = (0.0,10000.0) # [days]
 cb = TerminateSteadyState(1e-8,1e-6) # callback to stop at steadystate, more efficient for M-H search
 op = ODEProblem(rn_odesys, u0, tspan, p0, callback=cb)
 sol = solve(op, Rodas5())
 
-# Visualize solution.
+# Step 5: Visualize solution.
 using Plots
 p = plot(sol, legend = :outerright)
